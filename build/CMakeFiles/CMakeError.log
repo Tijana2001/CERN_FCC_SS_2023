@@ -1,0 +1,264 @@
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-8EUJ0V
+
+Run Build Command(s):/cvmfs/sw.hsf.org/spackages7/gmake/4.4.1/x86_64-centos7-gcc11.2.0-opt/g5m2j/bin/gmake -f Makefile cmTC_8ed2b/fast && /cvmfs/sw.hsf.org/spackages7/gmake/4.4.1/x86_64-centos7-gcc11.2.0-opt/g5m2j/bin/gmake  -f CMakeFiles/cmTC_8ed2b.dir/build.make CMakeFiles/cmTC_8ed2b.dir/build
+gmake[1]: Entering directory '/afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-8EUJ0V'
+Building CXX object CMakeFiles/cmTC_8ed2b.dir/src.cxx.o
+/cvmfs/sw.hsf.org/contrib/gcc/11.2.0/x86_64-centos7-gcc8.3.0-opt/d3epy/bin/g++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_8ed2b.dir/src.cxx.o -c /afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-8EUJ0V/src.cxx
+Linking CXX executable cmTC_8ed2b
+/cvmfs/sw.hsf.org/spackages7/cmake/3.25.2/x86_64-centos7-gcc11.2.0-opt/c4tzf/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ed2b.dir/link.txt --verbose=1
+/cvmfs/sw.hsf.org/contrib/gcc/11.2.0/x86_64-centos7-gcc8.3.0-opt/d3epy/bin/g++ CMakeFiles/cmTC_8ed2b.dir/src.cxx.o -o cmTC_8ed2b 
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: CMakeFiles/cmTC_8ed2b.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x2d): undefined reference to `pthread_create'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x39): undefined reference to `pthread_detach'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x45): undefined reference to `pthread_cancel'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x56): undefined reference to `pthread_join'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_8ed2b.dir/build.make:99: cmTC_8ed2b] Error 1
+gmake[1]: Leaving directory '/afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-8EUJ0V'
+gmake: *** [Makefile:127: cmTC_8ed2b/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-7lKCkv
+
+Run Build Command(s):/cvmfs/sw.hsf.org/spackages7/gmake/4.4.1/x86_64-centos7-gcc11.2.0-opt/g5m2j/bin/gmake -f Makefile cmTC_5ccdb/fast && /cvmfs/sw.hsf.org/spackages7/gmake/4.4.1/x86_64-centos7-gcc11.2.0-opt/g5m2j/bin/gmake  -f CMakeFiles/cmTC_5ccdb.dir/build.make CMakeFiles/cmTC_5ccdb.dir/build
+gmake[1]: Entering directory '/afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-7lKCkv'
+Building CXX object CMakeFiles/cmTC_5ccdb.dir/src.cxx.o
+/cvmfs/sw.hsf.org/contrib/gcc/11.2.0/x86_64-centos7-gcc8.3.0-opt/d3epy/bin/g++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_5ccdb.dir/src.cxx.o -c /afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-7lKCkv/src.cxx
+Linking CXX executable cmTC_5ccdb
+/cvmfs/sw.hsf.org/spackages7/cmake/3.25.2/x86_64-centos7-gcc11.2.0-opt/c4tzf/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ccdb.dir/link.txt --verbose=1
+/cvmfs/sw.hsf.org/contrib/gcc/11.2.0/x86_64-centos7-gcc8.3.0-opt/d3epy/bin/g++ CMakeFiles/cmTC_5ccdb.dir/src.cxx.o -o cmTC_5ccdb 
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: CMakeFiles/cmTC_5ccdb.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x2d): undefined reference to `pthread_create'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x39): undefined reference to `pthread_detach'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x45): undefined reference to `pthread_cancel'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x56): undefined reference to `pthread_join'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_5ccdb.dir/build.make:99: cmTC_5ccdb] Error 1
+gmake[1]: Leaving directory '/afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-7lKCkv'
+gmake: *** [Makefile:127: cmTC_5ccdb/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-4JcB0y
+
+Run Build Command(s):/cvmfs/sw.hsf.org/spackages7/gmake/4.4.1/x86_64-centos7-gcc11.2.0-opt/g5m2j/bin/gmake -f Makefile cmTC_1cbde/fast && /cvmfs/sw.hsf.org/spackages7/gmake/4.4.1/x86_64-centos7-gcc11.2.0-opt/g5m2j/bin/gmake  -f CMakeFiles/cmTC_1cbde.dir/build.make CMakeFiles/cmTC_1cbde.dir/build
+gmake[1]: Entering directory '/afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-4JcB0y'
+Building CXX object CMakeFiles/cmTC_1cbde.dir/src.cxx.o
+/cvmfs/sw.hsf.org/contrib/gcc/11.2.0/x86_64-centos7-gcc8.3.0-opt/d3epy/bin/g++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_1cbde.dir/src.cxx.o -c /afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-4JcB0y/src.cxx
+Linking CXX executable cmTC_1cbde
+/cvmfs/sw.hsf.org/spackages7/cmake/3.25.2/x86_64-centos7-gcc11.2.0-opt/c4tzf/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1cbde.dir/link.txt --verbose=1
+/cvmfs/sw.hsf.org/contrib/gcc/11.2.0/x86_64-centos7-gcc8.3.0-opt/d3epy/bin/g++ CMakeFiles/cmTC_1cbde.dir/src.cxx.o -o cmTC_1cbde 
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: CMakeFiles/cmTC_1cbde.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x2d): undefined reference to `pthread_create'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x39): undefined reference to `pthread_detach'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x45): undefined reference to `pthread_cancel'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x56): undefined reference to `pthread_join'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_1cbde.dir/build.make:99: cmTC_1cbde] Error 1
+gmake[1]: Leaving directory '/afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-4JcB0y'
+gmake: *** [Makefile:127: cmTC_1cbde/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-bCcaEu
+
+Run Build Command(s):/cvmfs/sw.hsf.org/spackages7/gmake/4.4.1/x86_64-centos7-gcc11.2.0-opt/g5m2j/bin/gmake -f Makefile cmTC_aab94/fast && /cvmfs/sw.hsf.org/spackages7/gmake/4.4.1/x86_64-centos7-gcc11.2.0-opt/g5m2j/bin/gmake  -f CMakeFiles/cmTC_aab94.dir/build.make CMakeFiles/cmTC_aab94.dir/build
+gmake[1]: Entering directory '/afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-bCcaEu'
+Building CXX object CMakeFiles/cmTC_aab94.dir/src.cxx.o
+/cvmfs/sw.hsf.org/contrib/gcc/11.2.0/x86_64-centos7-gcc8.3.0-opt/d3epy/bin/g++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_aab94.dir/src.cxx.o -c /afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-bCcaEu/src.cxx
+Linking CXX executable cmTC_aab94
+/cvmfs/sw.hsf.org/spackages7/cmake/3.25.2/x86_64-centos7-gcc11.2.0-opt/c4tzf/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aab94.dir/link.txt --verbose=1
+/cvmfs/sw.hsf.org/contrib/gcc/11.2.0/x86_64-centos7-gcc8.3.0-opt/d3epy/bin/g++ CMakeFiles/cmTC_aab94.dir/src.cxx.o -o cmTC_aab94 
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: CMakeFiles/cmTC_aab94.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x2d): undefined reference to `pthread_create'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x39): undefined reference to `pthread_detach'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x45): undefined reference to `pthread_cancel'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x56): undefined reference to `pthread_join'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_aab94.dir/build.make:99: cmTC_aab94] Error 1
+gmake[1]: Leaving directory '/afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-bCcaEu'
+gmake: *** [Makefile:127: cmTC_aab94/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-7LnRc4
+
+Run Build Command(s):/cvmfs/sw.hsf.org/spackages7/gmake/4.4.1/x86_64-centos7-gcc11.2.0-opt/g5m2j/bin/gmake -f Makefile cmTC_92058/fast && /cvmfs/sw.hsf.org/spackages7/gmake/4.4.1/x86_64-centos7-gcc11.2.0-opt/g5m2j/bin/gmake  -f CMakeFiles/cmTC_92058.dir/build.make CMakeFiles/cmTC_92058.dir/build
+gmake[1]: Entering directory '/afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-7LnRc4'
+Building CXX object CMakeFiles/cmTC_92058.dir/src.cxx.o
+/cvmfs/sw.hsf.org/contrib/gcc/11.2.0/x86_64-centos7-gcc8.3.0-opt/d3epy/bin/g++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_92058.dir/src.cxx.o -c /afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-7LnRc4/src.cxx
+Linking CXX executable cmTC_92058
+/cvmfs/sw.hsf.org/spackages7/cmake/3.25.2/x86_64-centos7-gcc11.2.0-opt/c4tzf/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92058.dir/link.txt --verbose=1
+/cvmfs/sw.hsf.org/contrib/gcc/11.2.0/x86_64-centos7-gcc8.3.0-opt/d3epy/bin/g++ CMakeFiles/cmTC_92058.dir/src.cxx.o -o cmTC_92058 
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: CMakeFiles/cmTC_92058.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x2d): undefined reference to `pthread_create'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x39): undefined reference to `pthread_detach'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x45): undefined reference to `pthread_cancel'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x56): undefined reference to `pthread_join'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_92058.dir/build.make:99: cmTC_92058] Error 1
+gmake[1]: Leaving directory '/afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-7LnRc4'
+gmake: *** [Makefile:127: cmTC_92058/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-gM1sKu
+
+Run Build Command(s):/cvmfs/sw.hsf.org/spackages7/gmake/4.4.1/x86_64-centos7-gcc11.2.0-opt/g5m2j/bin/gmake -f Makefile cmTC_f4c72/fast && /cvmfs/sw.hsf.org/spackages7/gmake/4.4.1/x86_64-centos7-gcc11.2.0-opt/g5m2j/bin/gmake  -f CMakeFiles/cmTC_f4c72.dir/build.make CMakeFiles/cmTC_f4c72.dir/build
+gmake[1]: Entering directory '/afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-gM1sKu'
+Building CXX object CMakeFiles/cmTC_f4c72.dir/src.cxx.o
+/cvmfs/sw.hsf.org/contrib/gcc/11.2.0/x86_64-centos7-gcc8.3.0-opt/d3epy/bin/g++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_f4c72.dir/src.cxx.o -c /afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-gM1sKu/src.cxx
+Linking CXX executable cmTC_f4c72
+/cvmfs/sw.hsf.org/spackages7/cmake/3.25.2/x86_64-centos7-gcc11.2.0-opt/c4tzf/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4c72.dir/link.txt --verbose=1
+/cvmfs/sw.hsf.org/contrib/gcc/11.2.0/x86_64-centos7-gcc8.3.0-opt/d3epy/bin/g++ CMakeFiles/cmTC_f4c72.dir/src.cxx.o -o cmTC_f4c72 
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: CMakeFiles/cmTC_f4c72.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x2d): undefined reference to `pthread_create'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x39): undefined reference to `pthread_detach'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x45): undefined reference to `pthread_cancel'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x56): undefined reference to `pthread_join'
+/cvmfs/sw.hsf.org/contrib/binutils/2.38/x86_64-centos7-gcc8.3.0-opt/pv4x2/bin/ld: src.cxx:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_f4c72.dir/build.make:99: cmTC_f4c72] Error 1
+gmake[1]: Leaving directory '/afs/cern.ch/user/t/tcvijeti/tt/FCCAnalyses/build/CMakeFiles/CMakeScratch/TryCompile-gM1sKu'
+gmake: *** [Makefile:127: cmTC_f4c72/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
