@@ -117,8 +117,6 @@ class RDFanalysis:
         )
        
 
-      
-
         df = df.Define(
             "leptons_theta",
             "FCCAnalyses::ReconstructedParticle::get_theta(leptons)",
@@ -131,7 +129,7 @@ class RDFanalysis:
             "leptons_q",
             "FCCAnalyses::ReconstructedParticle::get_charge(leptons)",
         )
-        #number of leptons
+        #number of leptonsi
         df = df.Define(
             "leptons_no", "FCCAnalyses::ReconstructedParticle::get_n(leptons)",
         )
