@@ -51,7 +51,7 @@ float invMass(const TLorentzVector& lv1, const TLorentzVector& lv2) {
 ROOT::RVec<float> InvMass(const ROOT::RVec<TLorentzVector>& leptons_p4 , const ROOT::RVec<TLorentzVector>& jets_p4) {
     ROOT::RVec<float> inv_masses;
     for (size_t i = 0; i < leptons_p4.size(); ++i) {
-        for (size_t j = 0; j < jets_p4.size(); ++j) {
+        for (size_t j = 0; j < 2; ++j) {
             float inv_mass = invMass(leptons_p4[i], jets_p4[j]);
             inv_masses.push_back(inv_mass);
         }

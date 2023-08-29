@@ -65,23 +65,10 @@ def build_graph(df, dataset):
     df = df.Define("weight", "1.0")
     weightsum = df.Sum("weight")
 
-    # #########
-    # ### CUT 4: Z mass window
-    # #########
-    # df = df.Filter("zmumu_m > 86 && zmumu_m < 96")
-
-    # #########
-    # ### CUT 5: Z momentum
-    # #########
-    # df = df.Filter("zmumu_p > 20 && zmumu_p < 70")
-
-    # #########
-    # ### CUT 6: recoil mass window
-    # #########
-    # df = df.Filter("zmumu_recoil_m < 140 && zmumu_recoil_m > 120")
+   
 
     #########
-    ### CUT 7: cut on the jet tagging score to select H->bb events
+    ### CUT 7: cut on the jet tagging score to select two jets to be B-like
     #########
     df = df.Define("scoresum_B", "recojet_isB[0] + recojet_isB[1]")
     df = df.Filter("recojet_isB[0] > 0.5 && recojet_isB[1] > 0.5")
@@ -90,21 +77,17 @@ def build_graph(df, dataset):
   
     #df = df.Filter("scoresum_B > 1.0")
 
-    # results.append(df.Histo1D(("zmumu_m", "", *bins_m_ll), "zmumu_m"))
-    # results.append(
-    #     df.Histo1D(("zmumu_recoil_m", "", *bins_recoil), "zmumu_recoil_m")
-    # )
-    # results.append(df.Histo1D(("zmumu_p", "", *bins_p_ll), "zmumu_p"))
+   
     results.append(df.Histo1D(("jj_m", "", *bins_m_jj), "jj_m"))
-    results.append(df.Histo1D(("ll_m", "", *bins_m_ll), "ll_m"))
-    results.append(df.Histo1D(("lj_m_comb", "", *bins_m_jj), "lj_m_comb"))
+    results.append(df.Histo1D(("ll_m", "", *bins_m_jj), "ll_m"))
+    results.append(df.Histo1D(("lb_m_comb", "", *bins_m_jj), "lb_m_comb"))
     results.append(df.Histo1D(("n_jets", "", *bins_n), "n_jets"))
     results.append(df.Histo1D(("cosTheta_miss", "", *bins_cosThetaMiss), "cosTheta_miss"))
     results.append(df.Histo1D(("missing_p", "", *bins_p_ll), "missing_p",))
     results.append(df.Histo1D(("jets_n", "", *bins_N), "jets_n"))
    # results.append(df.Histo1D(("leptons_no", "", *bins_N), "leptons_no"))
-    results.append(df.Histo1D(("jet1_p", "", *bins_p_ll), "jet1_p"))
-    results.append(df.Histo1D(("jet2_p", "", *bins_p_ll), "jet2_p"))
+    results.append(df.Histo1D(("jet1_p", "", *bins_m_jj), "jet1_p"))
+    results.append(df.Histo1D(("jet2_p", "", *bins_m_jj), "jet2_p"))
 
 
 

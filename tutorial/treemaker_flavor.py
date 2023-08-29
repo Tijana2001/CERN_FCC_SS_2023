@@ -214,7 +214,7 @@ class RDFanalysis:
         }
 
         collections_noleptons = copy.deepcopy(collections)
-        collections_noleptons["PFParticles"] = "ReconstructedParticles"
+        collections_noleptons["PFParticles"] = "ReconstructedParticlesNoLeptons"
 
        
         jetClusteringHelper = ExclusiveJetClusteringHelper(
@@ -299,14 +299,10 @@ class RDFanalysis:
             "JetConstituentsUtils::InvariantMass(jets_p4[0], jets_p4[1])",
         )
 
-        #df = df.Define("n_jets", "ReconstructedParticle::get_n(Jet)")
-        df = df.Define(
-             "lb_m",
-             "FCCAnalyses::ZHfunctions::invMass(leptons_p4[0], jets_p4[0])"
-        )
-        #invariant mass of all lepton-jet combinations 
+       
+        #invariant mass of all lepton-bjet combinations 
         df = df.Define (
-             "lj_m_comb",
+             "lb_m_comb",
              "FCCAnalyses::ZHfunctions::InvMass(leptons_p4, jets_p4)",
         )
         return df
@@ -324,8 +320,7 @@ class RDFanalysis:
             "jet2_p4",
             "ll_m",
             "n_jets",
-            "lb_m",
-            "lj_m_comb",
+            "lb_m_comb",
             "jets_n",
             "leptons_no"
 
